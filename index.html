@@ -1,0 +1,60 @@
+---
+layout: page
+description: "观山湖第一高级中学校友会网站"
+---
+
+{% for post in paginator.posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+        <div class="post-content-preview">
+            {{ post.content | strip_html | truncate:200 }}
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+</div>
+<hr>
+{% endfor %}
+
+<body>
+
+<!--clustermaps流量统计3d工具
+<script type="text/javascript" 
+    id="clstr_globe" 
+        src="//cdn.clustrmaps.com/globe.js?d=lVfXflU8RANk-byRG9VhUHEscCDG1c_VV-5w5XTSlh0">
+</script>
+-->
+<!--clustermaps2D流量统计工具
+<script type="text/javascript" 
+    id="clustrmaps" 
+        src="//cdn.clustrmaps.com/map_v2.js?d=lVfXflU8RANk-byRG9VhUHEscCDG1c_VV-5w5XTSlh0&cl=ffffff&w=a">
+</script>
+-->
+    
+</body>
+
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Next</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Pre &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}

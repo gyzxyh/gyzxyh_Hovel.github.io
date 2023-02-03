@@ -1,0 +1,171 @@
+---
+layout: page
+title: "校友会简介"
+description: "观一中校友会，又可以看作是观一励志宣讲团"
+header-img: "img/schoolPic19.jpg"
+---
+
+<!-- Language Selector -->
+<!-- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> 中文 Chinese </option>
+    <option value="1"> 英文 English </option>
+</select> -->
+
+<!-- Chinese Version -->
+<div class="main_article">
+    <h2>【校友会简介】观一励志宣讲团</h2>
+    <div class="article_aside" style="margin-bottom: 0px;margin-top: 15px;font-size:11px;">
+								2022-1-10
+				<ul class="post-meta" style="margin-bottom: 0px;float: right;font-size:11px;">
+					<li>
+					<span class="post-meta-key">来源:</span> 
+					观一中校友会
+					</li>									
+				</ul>
+				</div>
+				
+   <hr class="article_hr" style="margin-top: 1px;margin-bottom: 4px;">
+
+ <div class="article typo">
+		<p><strong><span style="font-size:16px;"><span style="font-family:宋体;">观一校友会，也可以看作是观一励志宣讲团，目前主要动作：</span></span></strong></p>
+
+<!--p>&nbsp;</p-->
+<p><span style="font-size:16px;"><span style="font-family:宋体;">1、服务于每年的寒假宣讲活动，记录发布宣讲信息、宣讲资料，方便查询，给学弟学妹答疑解惑。</span></span></p>
+<p><span style="font-size:16px;"><span style="font-family:宋体;">2、加强校友之间的联系，建立和维护校友公共关系。</span></span></p>
+<p><span style="font-size:16px;"><span style="font-family:宋体;">3、非盈利、非商业，如果要求捐款捐赠、转账的，不要相信，马上举报。</span></span></p>
+<p><span style="font-size:16px;"><span style="font-family:宋体;">4、暂时没有会员制，没有会费，自发自愿，互帮互助。</span></span></p>
+<p><span style="font-size:16px;"><span style="font-family:宋体;">5、欢迎自荐，点击<a style="color: #337ab7;" href="https://gyzxyh.github.io/Careers/">招贤纳士</a>，一起建立更完善的体系。</span></span></p>
+<p><strong><span style="font-size:16px;"><span style="font-family:宋体;">快来加QQ总群~：258927439</span></span></strong></p>
+<!--p><span style="font-size:16px;"><span style="font-family:宋体;">微信上搜索公众号：贵阳市观山湖区第一高级中学</span></span></p-->
+
+<!--p style="text-align: center;"><img alt="" src="../../images/content/2022-08/20220821231455787664.png" style="width: 350px; height: 421px;"></p-->
+
+<!--section>
+<p>&nbsp;</p>
+</section>
+
+<section>
+<p><strong><span style="font-size:16px;"><span style="font-family:宋体;">2.联系方式</span></span></strong></p>
+
+<p><span style="font-size:14px;"><span style="font-family:宋体;">qq:3060242196（周学长）</span></span></p>
+</section-->
+
+</div>
+<!--div class="article_author" style="font-size:11px;">
+编辑：周瑞阳
+</div>
+<div class="article_author" style="font-size:11px;">
+文案：涂文箐（涂拨鼠学姐）
+</div-->					
+</div>
+
+<!-- English Version -->
+<!-- <div class="en post-container">
+    <blockquote><p>Yet another iOS Developer. <br>
+    Yet another Life-long Student.</p></blockquote>
+
+    <p>Hi, I am <strong>Baiying Qiu</strong>，you can call me <strong>BY</strong>. I am an iOS software engineer and currently working in Xiamen</p>
+
+    <p>This is my personal blog, through making Github Pages and Jekyll.My GitHub  👉 <a href="http://github.com/liweimin1996">Github·BY</a>.</p>
+    
+    <p>I am a sports enthusiast, I like fitness, running and boxing.</p>
+
+    <h5>Talks</h5>
+
+    <ul>
+    <li><a href="https://github.com">GitHub</a></li>
+    <li><a href="http://jekyll.com.cn/">jekyll</a></li>
+    <li><a href="https://pages.github.com/">GitHub Pages</a></li>
+    <li><a href="https://liweimin1996.github.io">BY</a></li>
+    </ul>
+</div> -->
+
+<!-- Handle Language Change -->
+<script type="text/javascript">
+    // get nodes
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    var $select = document.querySelector("select");
+
+    // bind hashchange event
+    window.addEventListener('hashchange', _render);
+
+    // handle render
+    function _render(){
+        var _hash = window.location.hash;
+        // en
+        if(_hash == "#en"){
+            $select.selectedIndex = 1;
+            $en.style.display = "block";
+            $zh.style.display = "none";
+        // zh by default
+        }else{
+            // not trigger onChange, otherwise cause a loop call.
+            $select.selectedIndex = 0;
+            $zh.style.display = "block";
+            $en.style.display = "none";
+        }
+    }
+
+    // handle select change
+    function onLanChange(index){
+        if(index == 0){
+            window.location.hash = "#zh"
+        }else{
+            window.location.hash = "#en"
+        }
+    }
+
+    // init
+    _render();
+</script>
+
+
+<!-- Gitalk 评论 start  -->
+{% if site.gitalk.enable %}
+<!-- Gitalk link  -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+    <script type="text/javascript">
+    var gitalk = new Gitalk({
+    clientID: '{{site.gitalk.clientID}}',
+    clientSecret: '{{site.gitalk.clientSecret}}',
+    repo: '{{site.gitalk.repo}}',
+    owner: '{{site.gitalk.owner}}',
+    admin: ['{{site.gitalk.admin}}'],
+    distractionFreeMode: {{site.gitalk.distractionFreeMode}},
+    id: 'about',
+    });
+    gitalk.render('gitalk-container');
+</script>
+{% endif %}
+<!-- Gitalk end -->
+
+ <!-- disqus 评论框 start  -->
+{% if site.disqus.enable %}
+
+<div class="comment">
+    <div id="disqus_thread" class="disqus-thread">
+    </div>
+</div>
+<!-- disqus 评论框 end -->
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "{{site.disqus.username}}";
+    var disqus_identifier = "{{site.disqus.username}}/{{page.url}}";
+    var disqus_url = "{{site.url}}{{page.url}}";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+{% endif %}
+
+
